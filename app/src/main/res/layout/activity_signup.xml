@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signup"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background_explore"
+    tools:context=".signup">
+
+    <TextView
+        android:id="@+id/text_on_image"
+        android:layout_width="314dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:padding="8dp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="10"
+        android:shadowDy="1"
+        android:shadowRadius="10"
+        android:text="@string/sign_up"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/my_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="-20dp"
+        android:contentDescription="@string/my_image_view"
+        android:src="@drawable/backgroundimg" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="-5dp"
+            android:autofillHints=""
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="#DFDDDD"
+            android:hint="@string/enter_your_name"
+            android:inputType="text"
+            android:paddingStart="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textStyle="bold"
+            tools:ignore="RtlSymmetry" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="25dp"
+            android:autofillHints=""
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="#DFDDDD"
+            android:hint="@string/enter_your_email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textStyle="bold"
+            tools:ignore="RtlSymmetry" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="25dp"
+            android:autofillHints=""
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="#DFDDDD"
+            android:hint="@string/enter_your_password"
+            android:inputType="textPassword"
+            android:paddingStart="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textStyle="bold"
+            tools:ignore="RtlSymmetry" />
+
+        <EditText
+            android:id="@+id/confirm_password"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="25dp"
+            android:autofillHints=""
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="#DFDDDD"
+            android:hint="@string/confirm_your_password"
+            android:inputType="textPassword"
+            android:paddingStart="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            tools:ignore="DuplicateIds,RtlSymmetry"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/next_signup"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="57dp"
+        android:backgroundTint="#00B9ED"
+        android:gravity="center"
+        android:padding="4dp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="10"
+        android:shadowDy="1"
+        android:shadowRadius="10"
+        android:text="@string/next"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        app:cornerRadius="15dp" />
+
+</RelativeLayout>

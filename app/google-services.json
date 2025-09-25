@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "314368506632",
+    "project_id": "gamecode-5c399",
+    "storage_bucket": "gamecode-5c399.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314368506632:android:889dbaecff5e98693f4abd",
+        "android_client_info": {
+          "package_name": "com.example.gamecoded"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZIri69DXCZnDDN7RjJmhshnlGmPyqKvE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
