@@ -42,29 +42,31 @@
 
     <ImageView
         android:id="@+id/my_image"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_width="406dp"
+        android:layout_height="989dp"
+        android:layout_marginTop="364dp"
         android:contentDescription="@string/bgcard"
         android:src="@drawable/navbar"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_on_image" />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="402dp"
         android:layout_height="47dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         android:padding="8dp"
         android:shadowColor="@android:color/black"
         android:text="@string/choose_a_course_to_get_started"
         android:textAlignment="center"
         android:textColor="@android:color/black"
-        android:textSize="22sp"
 
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/my_image_view" />
 
@@ -73,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="32dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/html_button"
         android:scaleType="centerCrop"
@@ -85,8 +87,8 @@
         android:id="@+id/css_lesson"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="112dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/css_button"
         android:scaleType="centerCrop"
@@ -98,8 +100,8 @@
         android:id="@+id/python_lesson"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/python_button"
         android:scaleType="centerCrop"
@@ -112,15 +114,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="112dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/javascript_button"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/javascriptimg" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
