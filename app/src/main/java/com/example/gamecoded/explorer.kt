@@ -23,5 +23,11 @@ class explorer : AppCompatActivity() {
         home_button.setOnClickListener {
             startActivity(Intent(this, explorer::class.java))
             }
+
+        val lessons_button = findViewById<ImageButton>(R.id.lessons_button)
+        home_button.setOnClickListener {
+            startActivity(Intent(this, python_lessons::class.java))
+        }
+
         }
     }

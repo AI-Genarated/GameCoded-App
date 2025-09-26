@@ -24,4 +24,5 @@
     <string name="lessons_button">lessons_button</string>
     <string name="profile_button">profile_button</string>
     <string name="html">HTML</string>
+    <string name="python">Python</string>
 </resources>

@@ -14,10 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GameCoded">
         <activity
+            android:name=".python_lessons"
+            android:exported="false" />
+        <activity
             android:name=".PythonLessonsActivity"
             android:exported="false"
             android:theme="@style/Theme.Material3.DynamicColors.Dark.NoActionBar" />
-
         <activity
             android:name=".explorer"
             android:exported="false"
