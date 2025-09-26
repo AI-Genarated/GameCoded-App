@@ -1,0 +1,51 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:background="@android:color/darker_gray"
+    android:layout_marginBottom="8dp">
+
+    <!-- Title and description -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:paddingEnd="8dp">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/lessonTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lesson 1"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/lessonDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get started with Python"
+            android:textSize="14sp"
+            android:paddingTop="4dp"/>
+    </LinearLayout>
+
+    <!-- Lesson progress -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+
+        <!-- Progress in percentage -->
+        <TextView
+            android:id="@+id/lessonProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5%"
+            android:textSize="16sp"/>
+    </LinearLayout>
+</LinearLayout>
