@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_python_lesson2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background_explore"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvHeadingVariables"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/variables_and_data_types"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingBottom="12dp" />
+
+        <TextView
+            android:id="@+id/tvLessonVariables"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@string/a_variable_is_like_a_box_that_stores_things_python_has_types_n_n_int_whole_numbers_e_g_5_n_float_decimal_numbers_e_g_3_14_n_str_text_e_g_apple_n_bool_true_or_false_n_ndrag_each_example_into_the_correct_box_below'
+            android:textSize="16sp"
+            android:paddingBottom="16dp"
+            android:textStyle="bold"/>
+
+        <!-- Game: drag examples into type boxes -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/varExample1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@string/apple'
+                android:textStyle="bold"
+                android:padding="12dp"
+                android:background="@android:color/white"
+                android:textColor="@color/black"
+                android:layout_margin="8dp"
+                android:textSize="18sp"  />
+
+            <TextView
+                android:id="@+id/varExample2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_42"
+                android:textStyle="bold"
+                android:background="@android:color/white"
+                android:textColor="@color/black"
+                android:padding="12dp"
+                android:layout_margin="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/varExample3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/_3_14"
+                android:padding="12dp"
+                android:background="@android:color/white"
+                android:textColor="@color/black"
+                android:layout_margin="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/varExample4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/true1"
+                android:padding="12dp"
+                android:textStyle="bold"
+                android:background="@android:color/white"
+                android:textColor="@color/black"
+                android:layout_margin="8dp"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:id="@+id/boxString"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="120dp"
+                android:background="@android:color/darker_gray"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_margin="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="String"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/boxInt"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="120dp"
+                android:background="@android:color/darker_gray"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_margin="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Int"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/boxFloat"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="120dp"
+                android:background="@android:color/darker_gray"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_margin="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Float"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/boxBool"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="120dp"
+                android:background="@android:color/darker_gray"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_margin="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bool"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Quiz -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/quiz_which_type_is_9_99"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:paddingBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/rgVariables"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/optVar1"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:text="int"
+                android:textStyle="bold"/>
+
+            <RadioButton
+                android:id="@+id/optVar2"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:text="float"
+                android:textStyle="bold"/>
+
+            <RadioButton
+                android:id="@+id/optVar3"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:text="str"
+                android:textStyle="bold"/>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnVarSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check Answer"
+            android:layout_marginTop="12dp"/>
+
+        <TextView
+            android:id="@+id/tvVarResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:paddingTop="8dp"/>
+    </LinearLayout>
+</ScrollView>

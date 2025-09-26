@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_python_lesson1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background_explore"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Heading -->
+        <TextView
+            android:id="@+id/tvHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/learn_python_fundamentals"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingBottom="16dp"/>
+
+        <!-- Lesson Text -->
+        <TextView
+            android:id="@+id/tvLesson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/python_is_a_programming_language_that_is_easy_and_fun_to_learn_n_n1_python_uses_print_to_show_messages_n2_variables_store_values_like_x_5_n3_indentation_is_very_important_n4_python_is_used_in_games_apps_and_even_ai_n_nlet_s_play_a_game_below"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingBottom="24dp"/>
+
+        <!-- Mini Drag and Drop Game -->
+        <TextView
+            android:id="@+id/tvGameInstruction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/drag_the_code_blocks_into_the_correct_order_to_print_hello"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingBottom="12dp"/>
+
+        <LinearLayout
+            android:id="@+id/codeBlocks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/block1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:text="@string/print"
+                android:padding="12dp"
+                android:layout_margin="8dp"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/block2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:text='"hello"'
+                android:padding="12dp"
+                android:layout_margin="8dp"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/block3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:text="@string/L"
+                android:padding="12dp"
+                android:layout_margin="8dp"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvDropTarget"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="@string/drop_blocks_here"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:padding="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Multiple Choice Quiz -->
+        <TextView
+            android:id="@+id/tvQuiz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/quiz_which_command_shows_text_on_the_screen_in_python"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingBottom="12dp"/>
+
+        <RadioGroup
+            android:id="@+id/quizOptions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/option1"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:text="@string/echo"
+                android:textStyle="bold"/>
+
+            <RadioButton
+                android:id="@+id/option2"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:text="@string/print2"
+                android:textStyle="bold"/>
+
+            <RadioButton
+                android:id="@+id/option3"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:text="@string/say"
+                android:textStyle="bold"/>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnSubmitQuiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submit_answer"
+            android:layout_marginTop="12dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvQuizResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp"/>
+
+    </LinearLayout>
+</ScrollView>
