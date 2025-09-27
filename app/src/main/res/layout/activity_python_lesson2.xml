@@ -16,7 +16,7 @@
             android:id="@+id/tvHeadingVariables"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/variables_and_data_types"
+            android:text="variables_and_data_types"
             android:textSize="22sp"
             android:textStyle="bold"
             android:gravity="center"
@@ -26,7 +26,7 @@
             android:id="@+id/tvLessonVariables"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text='@string/a_variable_is_like_a_box_that_stores_things_python_has_types_n_n_int_whole_numbers_e_g_5_n_float_decimal_numbers_e_g_3_14_n_str_text_e_g_apple_n_bool_true_or_false_n_ndrag_each_example_into_the_correct_box_below'
+            android:text='a_variable_is_like_a_box_that_stores_things_python_has_types_n_n_int_whole_numbers_e_g_5_n_float_decimal_numbers_e_g_3_14_n_str_text_e_g_apple_n_bool_true_or_false_n_ndrag_each_example_into_the_correct_box_below'
             android:textSize="16sp"
             android:paddingBottom="16dp"
             android:textStyle="bold"/>
@@ -43,7 +43,7 @@
                 android:id="@+id/varExample1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text='@string/apple'
+                android:text='apple'
                 android:textStyle="bold"
                 android:padding="12dp"
                 android:background="@android:color/white"
@@ -55,7 +55,7 @@
                 android:id="@+id/varExample2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/_42"
+                android:text="42"
                 android:textStyle="bold"
                 android:background="@android:color/white"
                 android:textColor="@color/black"
@@ -68,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:text="@string/_3_14"
+                android:text="3_14"
                 android:padding="12dp"
                 android:background="@android:color/white"
                 android:textColor="@color/black"
@@ -79,7 +79,7 @@
                 android:id="@+id/varExample4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/true1"
+                android:text="true"
                 android:padding="12dp"
                 android:textStyle="bold"
                 android:background="@android:color/white"
@@ -173,7 +173,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/quiz_which_type_is_9_99"
+            android:text="quiz_which_type_is_9_99"
             android:textStyle="bold"
             android:textSize="18sp"
             android:paddingBottom="8dp" />
