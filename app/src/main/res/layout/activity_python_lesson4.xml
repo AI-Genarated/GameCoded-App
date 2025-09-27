@@ -78,16 +78,16 @@
             android:textStyle="bold"
             android:textColor="@color/black">
 
-            <TextView android:id="@+id/loopResult" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Drop here to run the loop" />
+            <TextView android:id="@+id/loopResult" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Drop here to run the loop" android:textColor="@color/black"/>
         </LinearLayout>
 
         <!-- Quiz -->
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Quiz: How many times runs range(4)?" android:textSize="18sp" android:paddingBottom="8dp" android:textStyle="bold"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Quiz: How many times runs range(4)?" android:textSize="18sp" android:paddingBottom="8dp" android:textStyle="bold" android:textColor="@color/black"/>
 
         <RadioGroup android:id="@+id/rgLoop" android:layout_width="match_parent" android:layout_height="wrap_content">
-            <RadioButton android:id="@+id/loopOpt1" android:layout_width="100dp" android:layout_height="48dp" android:text="3" android:textStyle="bold"/>
-            <RadioButton android:id="@+id/loopOpt2" android:layout_width="100dp" android:layout_height="48dp" android:text="4" android:textStyle="bold"/>
-            <RadioButton android:id="@+id/loopOpt3" android:layout_width="100dp" android:layout_height="48dp" android:text="5" android:textStyle="bold"/>
+            <RadioButton android:id="@+id/loopOpt1" android:layout_width="100dp" android:layout_height="48dp" android:text="3" android:textStyle="bold" android:textColor="@color/black"/>
+            <RadioButton android:id="@+id/loopOpt2" android:layout_width="100dp" android:layout_height="48dp" android:text="4" android:textStyle="bold" android:textColor="@color/black"/>
+            <RadioButton android:id="@+id/loopOpt3" android:layout_width="100dp" android:layout_height="48dp" android:text="5" android:textStyle="bold" android:textColor="@color/black"/>
         </RadioGroup>
 
         <Button android:id="@+id/btnLoopSubmit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Check Answer" android:layout_marginTop="12dp" android:textStyle="bold"/>

@@ -172,7 +172,7 @@
         android:shadowDx="10"
         android:shadowDy="1"
         android:shadowRadius="10"
-        android:text="@string/lesson_7"
+        android:text="lesson 6"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         app:cornerRadius="15dp"

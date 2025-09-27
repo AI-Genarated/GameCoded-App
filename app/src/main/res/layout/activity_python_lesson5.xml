@@ -92,9 +92,9 @@
         android:textColor="@color/black"/>
 
     <RadioGroup android:id="@+id/rgFunc" android:layout_width="match_parent" android:layout_height="wrap_content">
-        <RadioButton android:id="@+id/funcOpt1" android:text="def" android:layout_width="100dp" android:layout_height="48dp" android:textStyle="bold"/>
-        <RadioButton android:id="@+id/funcOpt2" android:layout_width="100dp" android:layout_height="48dp" android:text="fun" android:textStyle="bold"/>
-        <RadioButton android:id="@+id/funcOpt3" android:layout_width="100dp" android:layout_height="48dp" android:text="function" android:textStyle="bold"/>
+        <RadioButton android:id="@+id/funcOpt1" android:text="def" android:layout_width="100dp" android:layout_height="48dp" android:textStyle="bold" android:textColor="@color/black"/>
+        <RadioButton android:id="@+id/funcOpt2" android:layout_width="100dp" android:layout_height="48dp" android:text="fun" android:textStyle="bold" android:textColor="@color/black"/>
+        <RadioButton android:id="@+id/funcOpt3" android:layout_width="100dp" android:layout_height="48dp" android:text="function" android:textStyle="bold" android:textColor="@color/black"/>
     </RadioGroup>
 
     <Button android:id="@+id/btnFuncSubmit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Check Answer" android:layout_marginTop="12dp" android:textStyle="bold"/>
