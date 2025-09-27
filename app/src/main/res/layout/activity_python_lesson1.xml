@@ -17,9 +17,10 @@
             android:id="@+id/tvHeading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="learn_python_fundamentals"
+            android:text="Learn python fundamentals"
             android:textSize="24sp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:gravity="center"
             android:paddingBottom="16dp"/>
 
@@ -28,9 +29,10 @@
             android:id="@+id/tvLesson"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="python_is_a_programming_language_that_is_easy_and_fun_to_learn_n_n1_python_uses_print_to_show_messages_n2_variables_store_values_like_x_5_n3_indentation_is_very_important_n4_python_is_used_in_games_apps_and_even_ai_n_nlet_s_play_a_game_below"
+            android:text="Python is a programming language that is easy and fun to learn!\n\n1. Python uses print() to show messages.\n2. Variables store values, like x = 5.\n3. Indentation is very important!\n4. Python is used in games, apps, and even AI!\n\nLet’s play a game below ⬇️"
             android:textSize="16sp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:paddingBottom="24dp"/>
 
         <!-- Mini Drag and Drop Game -->
@@ -38,10 +40,11 @@
             android:id="@+id/tvGameInstruction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="drag_the_code_blocks_into_the_correct_order_to_print_hello"
+            android:text="Drag the code blocks into the correct order to print Hello!"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:paddingBottom="12dp"/>
+            android:paddingBottom="12dp"
+            android:textColor="@color/black"/>
 
         <LinearLayout
             android:id="@+id/codeBlocks"
@@ -54,55 +57,60 @@
                 android:id="@+id/block1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/white"
-                android:text="print("
+                android:background="@android:color/holo_blue_light"
+                android:text="@string/print"
                 android:padding="12dp"
                 android:layout_margin="8dp"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/block2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/white"
-                android:text='"hello"'
+                android:background="@android:color/holo_green_light"
+                android:text='@string/helloo'
                 android:padding="12dp"
                 android:layout_margin="8dp"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/block3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/white"
-                android:text=")"
+                android:background="@android:color/holo_orange_light"
+                android:text="@string/brace"
                 android:padding="12dp"
                 android:layout_margin="8dp"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
         </LinearLayout>
 
         <TextView
             android:id="@+id/tvDropTarget"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@color/white"
+            android:background="@android:color/darker_gray"
             android:gravity="center"
-            android:text="drop_blocks_here"
+            android:text="@string/drop_blocks_here"
             android:textSize="16sp"
             android:textStyle="italic"
             android:padding="12dp"
             android:layout_marginTop="12dp"
-            android:layout_marginBottom="24dp"/>
+            android:layout_marginBottom="24dp"
+            android:textColor="@color/black"/>
 
         <!-- Multiple Choice Quiz -->
         <TextView
             android:id="@+id/tvQuiz"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="quiz_which_command_shows_text_on_the_screen_in_python"
+            android:text="Quiz: Which command shows text on the screen in Python?"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:paddingBottom="12dp"/>
+            android:paddingBottom="12dp"
+            android:textColor="@color/black"/>
 
         <RadioGroup
             android:id="@+id/quizOptions"
@@ -113,31 +121,35 @@
                 android:id="@+id/option1"
                 android:layout_width="100dp"
                 android:layout_height="48dp"
-                android:text="echo"
-                android:textStyle="bold"/>
+                android:text="echo()"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
 
             <RadioButton
                 android:id="@+id/option2"
                 android:layout_width="100dp"
                 android:layout_height="48dp"
-                android:text="print2"
-                android:textStyle="bold"/>
+                android:text="print()"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
 
             <RadioButton
                 android:id="@+id/option3"
                 android:layout_width="100dp"
                 android:layout_height="48dp"
-                android:text="say"
-                android:textStyle="bold"/>
+                android:text="say()"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
         </RadioGroup>
 
         <Button
             android:id="@+id/btnSubmitQuiz"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="submit_answer"
+            android:text="Submit Answer"
             android:layout_marginTop="12dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/tvQuizResult"

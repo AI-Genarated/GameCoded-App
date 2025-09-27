@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -14,19 +13,55 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GameCoded">
         <activity
-            android:name=".explorer"
+            android:name=".PythonLesson5"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.DynamicColors.Dark.NoActionBar"/>
+        <activity
+            android:name=".PythonLesson4"
             android:exported="false"
             android:theme="@style/Theme.Material3.DynamicColors.Dark.NoActionBar" />
         <activity
-            android:name=".signin"
+            android:name=".PythonLesson3"
             android:exported="false"
             android:theme="@style/Theme.Material3.DynamicColors.Dark.NoActionBar" />
         <activity
-            android:name=".signup"
+            android:name=".PythonLesson2"
             android:exported="false"
             android:theme="@style/Theme.Material3.DynamicColors.Dark.NoActionBar" />
         <activity
-            android:name=".welcome"
+            android:name=".PythonLesson1"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.DynamicColors.Dark.NoActionBar" />
+        <activity
+            android:name=".JavascriptLessons"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.DynamicColors.Dark.NoActionBar" />
+        <activity
+            android:name=".CssLessons"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.DynamicColors.Dark.NoActionBar" />
+        <activity
+            android:name=".HtmlLessons"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.DynamicColors.Dark.NoActionBar" />
+        <activity
+            android:name=".PythonLessons"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.DynamicColors.Dark.NoActionBar" />
+        <activity
+            android:name=".Explorer"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.DynamicColors.Dark.NoActionBar" />
+        <activity
+            android:name=".SignIn"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.DynamicColors.Dark.NoActionBar" />
+        <activity
+            android:name=".SignUp"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.DynamicColors.Dark.NoActionBar" />
+        <activity
+            android:name=".Welcome"
             android:exported="true"
             android:theme="@style/Theme.Material3.DynamicColors.Dark.NoActionBar">
             <intent-filter>

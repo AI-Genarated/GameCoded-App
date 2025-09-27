@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class welcome : AppCompatActivity() {
+class Welcome : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -22,10 +22,12 @@ class welcome : AppCompatActivity() {
         val nextBtn = findViewById<Button>(R.id.signin_screen)
         val nextBtn2 = findViewById<Button>(R.id.signup_screen)
         nextBtn.setOnClickListener {
-            startActivity(Intent(this, signin::class.java))
+            startActivity(Intent(this, SignIn::class.java))
+            finish()
         }
         nextBtn2.setOnClickListener {
-            startActivity(Intent(this, signup::class.java))
+            startActivity(Intent(this, SignUp::class.java))
+            finish()
         }
     }
 }

@@ -11,7 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 
-class signin : AppCompatActivity() {
+class SignIn : AppCompatActivity() {
 
     private lateinit var email: EditText
     private lateinit var password: EditText
@@ -68,7 +68,7 @@ class signin : AppCompatActivity() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     // Navigate to ExplorePage upon successful login
-                    startActivity(Intent(this, explorer::class.java))
+                    startActivity(Intent(this, Explorer::class.java))
                     finish()
                 } else {
                     showToast("Login failed: ${task.exception?.message}")

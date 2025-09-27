@@ -1,31 +1,39 @@
 package com.example.gamecoded
 
+import android.content.ClipData
 import android.os.Bundle
+import android.view.DragEvent
+import android.view.View
+import android.widget.*
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-import android.content.ClipData
-import android.view.DragEvent
-import android.view.View
-import android.widget.*
-
-class python_lesson2 : AppCompatActivity() {
+class PythonLesson2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_python_lesson2)
+
+        // Fix: findViewById AFTER setContentView
         val boxString = findViewById<LinearLayout>(R.id.boxString)
         val boxInt = findViewById<LinearLayout>(R.id.boxInt)
         val boxFloat = findViewById<LinearLayout>(R.id.boxFloat)
         val boxBool = findViewById<LinearLayout>(R.id.boxBool)
 
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_python_lesson2)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.activity_python_lesson2)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val examples = listOf(
+            findViewById<TextView>(R.id.varExample1),
+            findViewById<TextView>(R.id.varExample2),
+            findViewById<TextView>(R.id.varExample3),
+            findViewById<TextView>(R.id.varExample4)
+        )
 
         val dragStarter = View.OnLongClickListener { v ->
             val clip = ClipData.newPlainText("text", (v as TextView).text)
@@ -33,16 +41,15 @@ class python_lesson2 : AppCompatActivity() {
             v.startDragAndDrop(clip, shadow, v, 0)
             true
         }
+        examples.forEach { it.setOnLongClickListener(dragStarter) }
 
         val dropListener = View.OnDragListener { v, event ->
             when (event.action) {
                 DragEvent.ACTION_DROP -> {
                     val text = event.clipData.getItemAt(0).text.toString()
-                    val target = v.id
-                    // simple validation feedback: append text to target box
                     val tv = TextView(this)
                     tv.text = text
-                    tv.setPadding(6,6,6,6)
+                    tv.setPadding(6, 6, 6, 6)
                     (v as LinearLayout).addView(tv)
                 }
             }

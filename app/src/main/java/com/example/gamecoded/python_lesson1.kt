@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class python_lesson1: AppCompatActivity() {
+class PythonLesson1: AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,8 +26,6 @@ class python_lesson1: AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        @SuppressLint("SetTextI18n")
 
         val block1: TextView = findViewById(R.id.block1)
         val block2: TextView = findViewById(R.id.block2)
@@ -49,8 +47,6 @@ class python_lesson1: AppCompatActivity() {
         block1.setOnLongClickListener(dragListener)
         block2.setOnLongClickListener(dragListener)
         block3.setOnLongClickListener(dragListener)
-
-
 
         // Handle drop
         dropTarget.setOnDragListener { v, event ->
