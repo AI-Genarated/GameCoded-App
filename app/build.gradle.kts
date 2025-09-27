@@ -41,6 +41,10 @@ android {
 }
 
 dependencies {
+    //ai agent dependencies
+    implementation("com.microsoft.onnxruntime:onnxruntime-android:1.23.0")
+// check latest
+    implementation("com.google.code.gson:gson:2.13.2")
     // Firebase BOM for version management
     implementation(platform(libs.firebase.bom))
 
@@ -63,6 +67,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.firebase.firestore)
+    implementation(libs.androidx.material3)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

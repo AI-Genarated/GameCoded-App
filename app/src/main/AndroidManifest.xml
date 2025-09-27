@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GameCoded">
         <activity
+            android:name=".ChatBot"
+            android:exported="false" />
+        <activity
             android:name=".python_lessons"
             android:exported="false" />
         <activity
