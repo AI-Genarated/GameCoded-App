@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/gradient_background_explore"
+    android:id="@+id/activity_python_lesson3"
+    android:fillViewport="true"
+    tools:context=".PythonLesson3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvHeadingIf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="If Statements: Making Choices"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingBottom="12dp" />
+
+        <TextView
+            android:id="@+id/tvLessonIf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text='@string/if_statements_help_the_computer_make_choices_use_indentation_to_show_what_happens_when_a_condition_is_true_n_nexample_nif_age_13_n_print_you_are_a_kid_n_ntry_the_mini_game_below_choose_the_condition_that_lets_our_hero_open_the_gate'
+            android:textSize="16sp"
+            android:paddingBottom="16dp" />
+
+        <!-- Mini game: condition cards -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/cond1"
+                android:text="@string/if_age_10"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:background="@android:color/holo_blue_light"
+                android:layout_margin="8dp"/>
+
+            <TextView
+                android:id="@+id/cond2"
+                android:text="if age >= 13:"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:padding="12dp"
+                android:background="@android:color/holo_orange_light"
+                android:layout_margin="8dp"/>
+
+            <TextView
+                android:id="@+id/cond3"
+                android:text="@string/if_age_18"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:padding="12dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:background="@android:color/holo_green_light"
+                android:layout_margin="8dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dropGate"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:background="@android:color/darker_gray"
+            android:text="Drop condition here to open the gate"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Quiz -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text='@string/quiz_what_prints_if_x_5_nif_x_3_n_print_big'
+            android:textSize="18sp"
+            android:paddingBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/rgIf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton android:id="@+id/ifOpt1" android:layout_width="100dp" android:layout_height="48dp" android:text="Nothing" android:textStyle="bold" android:textColor="@color/black"/>
+            <RadioButton android:id="@+id/ifOpt2" android:layout_width="100dp" android:layout_height="48dp" android:text="Big" android:textStyle="bold" android:textColor="@color/black"/>
+            <RadioButton android:id="@+id/ifOpt3" android:layout_width="100dp" android:layout_height="48dp" android:text="Error" android:textStyle="bold" android:textColor="@color/black"/>
+        </RadioGroup>
+
+        <Button android:id="@+id/btnIfSubmit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Check Answer" android:layout_marginTop="12dp" android:textStyle="bold" android:textColor="@color/black"/>
+        <TextView android:id="@+id/tvIfResult" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:textStyle="bold" android:paddingTop="8dp"/>
+    </LinearLayout>
+</ScrollView>
