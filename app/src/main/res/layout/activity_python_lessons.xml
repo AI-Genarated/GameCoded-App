@@ -1,250 +1,821 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/python_lessons"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/python_lessons"
+    android:orientation="vertical"
+    android:padding="16dp"
     android:background="@drawable/gradient_background_explore"
-    tools:context=".PythonLessons">
+    tools:context=".python_lessons">
 
     <TextView
         android:id="@+id/text_on_image"
-        android:layout_width="314dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:padding="8dp"
         android:shadowColor="@android:color/black"
         android:shadowDx="10"
         android:shadowDy="1"
         android:shadowRadius="10"
-        android:text="Python"
+        android:text="@string/python"
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="50sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <ImageView
-        android:id="@+id/my_image_view"
+        android:textStyle="bold" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="-20dp"
-        android:contentDescription="@string/backgroundimg"
-        android:src="@drawable/backgroundimg1" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/lesson1"
-        android:layout_width="350dp"
-        android:layout_height="70dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="156dp"
-        android:backgroundTint="#00B9ED"
-        android:gravity="center"
-        android:padding="4dp"
-        android:shadowColor="@android:color/black"
-        android:shadowDx="10"
-        android:shadowDy="1"
-        android:shadowRadius="10"
-        android:text="lesson 1"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
-        app:cornerRadius="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/lesson2"
-        android:layout_width="350dp"
-        android:layout_height="70dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#00B9ED"
-        android:gravity="center"
-        android:padding="4dp"
-        android:shadowColor="@android:color/black"
-        android:shadowDx="10"
-        android:shadowDy="1"
-        android:shadowRadius="10"
-        android:text="lesson 2"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
-        app:cornerRadius="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lesson1" />
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/python_lesson_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_off_white"
+                android:paddingLeft="20dp"
+                android:clickable="true"
+                android:focusable="true">
 
-    <Button
-        android:id="@+id/lesson3"
-        android:layout_width="350dp"
-        android:layout_height="70dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#00B9ED"
-        android:gravity="center"
-        android:padding="4dp"
-        android:shadowColor="@android:color/black"
-        android:shadowDx="10"
-        android:shadowDy="1"
-        android:shadowRadius="10"
-        android:text="lesson 3"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
-        app:cornerRadius="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lesson2" />
+                <!-- Title and description -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="3">
 
-    <Button
-        android:id="@+id/lesson4"
-        android:layout_width="350dp"
-        android:layout_height="70dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#00B9ED"
-        android:gravity="center"
-        android:padding="4dp"
-        android:shadowColor="@android:color/black"
-        android:shadowDx="10"
-        android:shadowDy="1"
-        android:shadowRadius="10"
-        android:text="lesson 4"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
-        app:cornerRadius="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lesson3" />
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/lesson_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lesson 1"
+                        android:textStyle="bold"
+                        android:padding="5dp"/>
+                    <!-- Description -->
+                    <TextView
+                        android:id="@+id/lesson_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Get started with HTML fundamentals"
+                        android:padding="5dp"/>
 
-    <Button
-        android:id="@+id/lesson5"
-        android:layout_width="350dp"
-        android:layout_height="70dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#00B9ED"
-        android:gravity="center"
-        android:padding="4dp"
-        android:shadowColor="@android:color/black"
-        android:shadowDx="10"
-        android:shadowDy="1"
-        android:shadowRadius="10"
-        android:text="lesson 5"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
-        app:cornerRadius="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lesson4" />
+                </LinearLayout>
 
-    <Button
-        android:id="@+id/lesson6"
-        android:layout_width="350dp"
-        android:layout_height="70dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#00B9ED"
-        android:gravity="center"
-        android:padding="4dp"
-        android:shadowColor="@android:color/black"
-        android:shadowDx="10"
-        android:shadowDy="1"
-        android:shadowRadius="10"
-        android:text="lesson 7"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
-        app:cornerRadius="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lesson5" />
+                <!-- Progress as percentage -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
 
-    <ImageView
-        android:id="@+id/my_image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/bgcard"
-        android:src="@drawable/navbar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+                    <!-- Progress as percentage -->
+                    <TextView
+                        android:id="@+id/lesson_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:text="5%"
+                        android:textColor="@color/white"
+                        android:background="@drawable/rounded_ocean_right"
+                        android:gravity="center"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/ai_button"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="132dp"
-        android:layout_marginBottom="16dp"
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/python_lesson_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_off_white"
+                android:paddingLeft="20dp"
+                android:clickable="true"
+                android:focusable="true">
 
-        android:background="@android:color/transparent"
-        android:contentDescription="ai_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ai_lessons" />
+                <!-- Title and description -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="3">
 
-    <ImageButton
-        android:id="@+id/home_button"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="16dp"
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/lesson_2_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lesson 2"
+                        android:textStyle="bold"
+                        android:padding="5dp"/>
+                    <!-- Description -->
+                    <TextView
+                        android:id="@+id/lesson_2_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Learn about data storage with variables."
+                        android:padding="5dp"/>
 
-        android:background="@android:color/transparent"
-        android:contentDescription="home_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/home_button" />
+                </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/lessons_button"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="16dp"
+                <!-- Progress as percentage -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
 
-        android:background="@android:color/transparent"
-        android:contentDescription="lessons_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.35"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/lessons_button" />
+                    <!-- Progress as percentage -->
+                    <TextView
+                        android:id="@+id/lesson_2_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:text="5%"
+                        android:textColor="@color/white"
+                        android:background="@drawable/rounded_ocean_right"
+                        android:gravity="center"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/profile_button"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="16dp"
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/python_lesson_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_off_white"
+                android:paddingLeft="20dp"
+                android:clickable="true"
+                android:focusable="true">
 
-        android:background="@android:color/transparent"
-        android:contentDescription="profile_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.874"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/smile" />
+                <!-- Title and description -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="3">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/lesson_3_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lesson 3"
+                        android:textStyle="bold"
+                        android:padding="5dp"/>
+                    <!-- Description -->
+                    <TextView
+                        android:id="@+id/lesson_3_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Repeat instructions with loops"
+                        android:padding="5dp"/>
+
+                </LinearLayout>
+
+                <!-- Progress as percentage -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <!-- Progress as percentage -->
+                    <TextView
+                        android:id="@+id/lesson_3_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:text="5%"
+                        android:textColor="@color/white"
+                        android:background="@drawable/rounded_ocean_right"
+                        android:gravity="center"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/python_4_lesson_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_off_white"
+                android:paddingLeft="20dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <!-- Title and description -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="3">
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/lesson_4_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lesson 4"
+                        android:textStyle="bold"
+                        android:padding="5dp"/>
+                    <!-- Description -->
+                    <TextView
+                        android:id="@+id/lesson_4_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Learn decision-making with conditionals."
+                        android:padding="5dp"/>
+
+                </LinearLayout>
+
+                <!-- Progress as percentage -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <!-- Progress as percentage -->
+                    <TextView
+                        android:id="@+id/lesson_4_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:text="5%"
+                        android:textColor="@color/white"
+                        android:background="@drawable/rounded_ocean_right"
+                        android:gravity="center"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Add more lesson items -->
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/python_lesson_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_off_white"
+                android:paddingLeft="20dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <!-- Title and description -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="3">
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/lesson_5_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lesson 5"
+                        android:textStyle="bold"
+                        android:padding="5dp" />
+                    <!-- Description -->
+                    <TextView
+                        android:id="@+id/lesson_5_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Understand functions and modular code."
+                        android:padding="5dp" />
+
+                </LinearLayout>
+
+                <!-- Progress as percentage -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <!-- Progress as percentage -->
+                    <TextView
+                        android:id="@+id/lesson_5_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:text="0%"
+                        android:textColor="@color/white"
+                        android:background="@drawable/rounded_ocean_right"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/python_lesson_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_off_white"
+                android:paddingLeft="20dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <!-- Title and description -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="3">
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/lesson_6_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lesson 6"
+                        android:textStyle="bold"
+                        android:padding="5dp" />
+                    <!-- Description -->
+                    <TextView
+                        android:id="@+id/lesson_6_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Explore data structures: Lists and Tuples."
+                        android:padding="5dp" />
+
+                </LinearLayout>
+
+                <!-- Progress as percentage -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <!-- Progress as percentage -->
+                    <TextView
+                        android:id="@+id/lesson_6_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:text="0%"
+                        android:textColor="@color/white"
+                        android:background="@drawable/rounded_ocean_right"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/python_lesson_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_off_white"
+                android:paddingLeft="20dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <!-- Title and description -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="3">
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/lesson_7_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lesson 7"
+                        android:textStyle="bold"
+                        android:padding="5dp" />
+                    <!-- Description -->
+                    <TextView
+                        android:id="@+id/lesson_7_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Working with Dictionaries and Sets."
+                        android:padding="5dp" />
+
+                </LinearLayout>
+
+                <!-- Progress as percentage -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <!-- Progress as percentage -->
+                    <TextView
+                        android:id="@+id/lesson_7_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:text="0%"
+                        android:textColor="@color/white"
+                        android:background="@drawable/rounded_ocean_right"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/python_lesson_8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_off_white"
+                android:paddingLeft="20dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <!-- Title and description -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="3">
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/lesson_8_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lesson 8"
+                        android:textStyle="bold"
+                        android:padding="5dp" />
+                    <!-- Description -->
+                    <TextView
+                        android:id="@+id/lesson_8_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Introduction to Object-Oriented Programming."
+                        android:padding="5dp" />
+
+                </LinearLayout>
+
+                <!-- Progress as percentage -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <!-- Progress as percentage -->
+                    <TextView
+                        android:id="@+id/lesson_8_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:text="0%"
+                        android:textColor="@color/white"
+                        android:background="@drawable/rounded_ocean_right"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/python_lesson_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_off_white"
+                android:paddingLeft="20dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <!-- Title and description -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="3">
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/lesson_9_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lesson 9"
+                        android:textStyle="bold"
+                        android:padding="5dp" />
+                    <!-- Description -->
+                    <TextView
+                        android:id="@+id/lesson_9_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Understanding Classes and Objects."
+                        android:padding="5dp" />
+
+                </LinearLayout>
+
+                <!-- Progress as percentage -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <!-- Progress as percentage -->
+                    <TextView
+                        android:id="@+id/lesson_9_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:text="0%"
+                        android:textColor="@color/white"
+                        android:background="@drawable/rounded_ocean_right"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/python_lesson_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_off_white"
+                android:paddingLeft="20dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <!-- Title and description -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="3">
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/lesson_10_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lesson 10"
+                        android:textStyle="bold"
+                        android:padding="5dp" />
+                    <!-- Description -->
+                    <TextView
+                        android:id="@+id/lesson_10_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="File handling: Reading and Writing Files."
+                        android:padding="5dp" />
+
+                </LinearLayout>
+
+                <!-- Progress as percentage -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <!-- Progress as percentage -->
+                    <TextView
+                        android:id="@+id/lesson_10_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:text="0%"
+                        android:textColor="@color/white"
+                        android:background="@drawable/rounded_ocean_right"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/python_lesson_11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_off_white"
+                android:paddingLeft="20dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <!-- Title and description -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="3">
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/lesson_11_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lesson 11"
+                        android:textStyle="bold"
+                        android:padding="5dp" />
+                    <!-- Description -->
+                    <TextView
+                        android:id="@+id/lesson_11_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Error handling with Try-Except blocks."
+                        android:padding="5dp" />
+
+                </LinearLayout>
+
+                <!-- Progress as percentage -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <!-- Progress as percentage -->
+                    <TextView
+                        android:id="@+id/lesson_11_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:text="0%"
+                        android:textColor="@color/white"
+                        android:background="@drawable/rounded_ocean_right"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/python_lesson_12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_off_white"
+                android:paddingLeft="20dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <!-- Title and description -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="3">
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/lesson_12_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lesson 12"
+                        android:textStyle="bold"
+                        android:padding="5dp" />
+                    <!-- Description -->
+                    <TextView
+                        android:id="@+id/lesson_12_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Working with external libraries and modules."
+                        android:padding="5dp" />
+
+                </LinearLayout>
+
+                <!-- Progress as percentage -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <!-- Progress as percentage -->
+                    <TextView
+                        android:id="@+id/lesson_12_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:text="0%"
+                        android:textColor="@color/white"
+                        android:background="@drawable/rounded_ocean_right"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/python_lesson_13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_off_white"
+                android:paddingLeft="20dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <!-- Title and description -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="3">
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/lesson_13_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lesson 13"
+                        android:textStyle="bold"
+                        android:padding="5dp" />
+                    <!-- Description -->
+                    <TextView
+                        android:id="@+id/lesson_13_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Introduction to Python's Standard Library."
+                        android:padding="5dp" />
+
+                </LinearLayout>
+
+                <!-- Progress as percentage -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <!-- Progress as percentage -->
+                    <TextView
+                        android:id="@+id/lesson_13_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:text="0%"
+                        android:textColor="@color/white"
+                        android:background="@drawable/rounded_ocean_right"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/python_lesson_14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_off_white"
+                android:paddingLeft="20dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <!-- Title and description -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="3">
+
+                    <!-- Title -->
+                    <TextView
+                        android:id="@+id/lesson_14_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lesson 14"
+                        android:textStyle="bold"
+                        android:padding="5dp" />
+                    <!-- Description -->
+                    <TextView
+                        android:id="@+id/lesson_14_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Basic web scraping with Python."
+                        android:padding="5dp" />
+
+                </LinearLayout>
+
+                <!-- Progress as percentage -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <!-- Progress as percentage -->
+                    <TextView
+                        android:id="@+id/lesson_14_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:text="0%"
+                        android:textColor="@color/white"
+                        android:background="@drawable/rounded_ocean_right"
+                        android:gravity="center"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -6,11 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background_explore"
-    tools:context=".Explorer">
+    tools:context=".explorer">
 
 
     <TextView
-        android:importantForAccessibility="no"
         android:id="@+id/text_on_image"
         android:layout_width="314dp"
         android:layout_height="wrap_content"
@@ -54,7 +53,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
-        android:importantForAccessibility="no"
         android:id="@+id/textView"
         android:layout_width="402dp"
         android:layout_height="47dp"
@@ -181,7 +179,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/css_lesson"
         app:layout_constraintVertical_bias="0.692"
-        app:srcCompat="@drawable/smile" />
+        app:srcCompat="@drawable/user_button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
