@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_html_lesson3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="16dp"
+    android:background="@drawable/gradient_background_explore"
+    tools:context=".HtmlLesson3">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Lesson 3: HTML Paragraphs"
+            android:textSize="24sp"
+            android:padding="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:text="Paragraphs in HTML are written with <p> ... </p>."
+            android:padding="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <!-- Mini Game -->
+        <TextView
+            android:text="Drag the tag into the correct box:"
+            android:padding="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/drag_p"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@android:color/holo_green_light"
+                android:padding="10dp"
+                android:text="<p>"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/drag_h1_tag"
+                android:text="<h1>"
+                android:padding="10dp"
+                android:background="@android:color/holo_orange_light"
+                android:layout_margin="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/drop_para"
+            android:background="#DDFFDD"
+            android:padding="16dp"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView android:text="Drop the paragraph tag here"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/drop_heading"
+            android:background="#FFDDDD"
+            android:padding="16dp"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView android:text="Drop the heading tag here"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <!-- Quiz -->
+        <TextView
+            android:text="Quiz: Which tag makes a paragraph?"
+            android:padding="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <RadioGroup
+            android:id="@+id/quiz_group"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black">
+
+            <RadioButton android:text="<p>" android:id="@+id/opt_p" android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_width="200dp"
+                android:layout_height="48dp"/>
+            <RadioButton android:text="<h1>" android:id="@+id/opt_h1" android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_width="200dp"
+                android:layout_height="48dp"/>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/quiz_submit"
+            android:text="Submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/quiz_result"
+            android:text=""
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</ScrollView>

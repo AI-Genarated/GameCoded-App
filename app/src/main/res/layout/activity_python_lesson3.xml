@@ -18,12 +18,13 @@
             android:id="@+id/tvHeadingIf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="If Statements: Making Choices"
+            android:text="@string/if_statements_making_choices"
             android:textColor="@color/black"
             android:textSize="22sp"
             android:textStyle="bold"
             android:gravity="center"
             android:paddingBottom="12dp" />
+
 
         <TextView
             android:id="@+id/tvLessonIf"
@@ -35,7 +36,6 @@
             android:textSize="16sp"
             android:paddingBottom="16dp" />
 
-        <!-- Mini game: condition cards -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,7 +56,7 @@
 
             <TextView
                 android:id="@+id/cond2"
-                android:text="if age >= 13:"
+                android:text="@string/if_age_13"
                 android:layout_width="110dp"
                 android:layout_height="50dp"
                 android:textStyle="bold"
@@ -85,7 +85,7 @@
             android:textStyle="bold"
             android:textColor="@color/black"
             android:background="@android:color/darker_gray"
-            android:text="Drop condition here to open the gate"
+            android:text="@string/drop_condition_here_to_open_the_gate"
             android:layout_marginBottom="16dp"/>
 
         <!-- Quiz -->
@@ -102,12 +102,12 @@
             android:id="@+id/rgIf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <RadioButton android:id="@+id/ifOpt1" android:layout_width="100dp" android:layout_height="48dp" android:text="Nothing" android:textStyle="bold" android:textColor="@color/black"/>
-            <RadioButton android:id="@+id/ifOpt2" android:layout_width="100dp" android:layout_height="48dp" android:text="Big" android:textStyle="bold" android:textColor="@color/black"/>
-            <RadioButton android:id="@+id/ifOpt3" android:layout_width="100dp" android:layout_height="48dp" android:text="Error" android:textStyle="bold" android:textColor="@color/black"/>
+            <RadioButton android:id="@+id/ifOpt1" android:layout_width="100dp" android:layout_height="48dp" android:text="@string/nothing" android:textStyle="bold" android:textColor="@color/black"/>
+            <RadioButton android:id="@+id/ifOpt2" android:layout_width="100dp" android:layout_height="48dp" android:text="@string/big" android:textStyle="bold" android:textColor="@color/black"/>
+            <RadioButton android:id="@+id/ifOpt3" android:layout_width="100dp" android:layout_height="48dp" android:text="@string/error" android:textStyle="bold" android:textColor="@color/black"/>
         </RadioGroup>
 
-        <Button android:id="@+id/btnIfSubmit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Check Answer" android:layout_marginTop="12dp" android:textStyle="bold" android:textColor="@color/black"/>
+        <Button android:id="@+id/btnIfSubmit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/check_answer" android:layout_marginTop="12dp" android:textStyle="bold" android:textColor="@color/black"/>
         <TextView android:id="@+id/tvIfResult" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:textStyle="bold" android:paddingTop="8dp"/>
     </LinearLayout>
 </ScrollView>

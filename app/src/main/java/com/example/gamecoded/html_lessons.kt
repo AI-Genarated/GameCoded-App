@@ -25,15 +25,15 @@ class HtmlLessons : AppCompatActivity() {
         val html_Lesson4 = findViewById<Button>(R.id.lesson4)
         val html_Lesson5 = findViewById<Button>(R.id.lesson5)
 
-//        html_Lesson1.setOnClickListener {
-//            startActivity(Intent(this, html_lesson1::class.java))
-//        }
-//        html_Lesson2.setOnClickListener {
-//            startActivity(Intent(this, html_lesson2::class.java))
-//        }
-//        html_Lesson3.setOnClickListener {
-//            startActivity(Intent(this, html_lesson3::class.java))
-//        }
+        html_Lesson1.setOnClickListener {
+            startActivity(Intent(this, HtmlLesson1::class.java))
+        }
+        html_Lesson2.setOnClickListener {
+            startActivity(Intent(this, HtmlLesson2::class.java))
+        }
+        html_Lesson3.setOnClickListener {
+            startActivity(Intent(this, HtmlLesson3::class.java))
+        }
 //        html_Lesson4.setOnClickListener {
 //            startActivity(Intent(this, html_lesson4::class.java))
 //        }

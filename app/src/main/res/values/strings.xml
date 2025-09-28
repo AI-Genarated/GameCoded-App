@@ -44,4 +44,33 @@
     <string name="brace">)</string>
     <string name="drop_blocks_here">drop_blocks_here</string>
     <string name="quiz_which_command_shows_text_on_the_screen_in_python">quiz_which_command_shows_text_on_the_screen_in_python</string>
+    <string name="h1"><![CDATA[<h1>]]></string>
+    <string name="lesson_1_introduction_to_html">Lesson 1: Introduction to HTML</string>
+    <string name="html_stands_for_hypertext_markup_language_it_is_the_standard_language_for_creating_web_pages_html_uses_tags_like_h1_p_and_a_to_structure_content"><![CDATA[HTML stands for HyperText Markup Language. It is the standard language for creating web pages. HTML uses tags like <h1>, <p>, and <a> to structure content.]]></string>
+    <string name="mini_game_match_the_html_tag_with_its_meaning">Mini Game: Match the HTML tag with its meaning!</string>
+    <string name="p"><![CDATA[<p>]]></string>
+    <string name="heading_tag">Heading Tag</string>
+    <string name="paragraph_tag">Paragraph Tag</string>
+    <string name="quick_quiz">Quick Quiz!</string>
+    <string name="html_is_a_programming_language">HTML is a programming language.</string>
+    <string name="html_is_a_markup_language">HTML is a markup language.</string>
+    <string name="html_is_a_database_language">HTML is a database language.</string>
+    <string name="submit_answer">Submit Answer</string>
+    <string name="headings_in_html_are_written_with_h1_to_h6_h1_is_the_largest_and_h6_is_the_smallest"><![CDATA[Headings in HTML are written with <h1> to <h6>. <h1> is the largest and <h6> is the smallest.]]></string>
+    <string name="lesson_2_html_headings">Lesson 2: HTML Headings</string>
+    <string name="drag_the_heading_tags_to_the_correct_boxes">Drag the heading tags to the correct boxes:</string>
+    <string name="h3"><![CDATA[<h3>]]></string>
+    <string name="h6"><![CDATA[<h6>]]></string>
+    <string name="largest_heading">Largest Heading</string>
+    <string name="medium_heading">Medium Heading</string>
+    <string name="smallest_heading">Smallest Heading</string>
+    <string name="quiz_which_tag_makes_the_biggest_heading">Quiz: Which tag makes the biggest heading?</string>
+    <string name="submit">Submit</string>
+    <string name="if_age_13"><![CDATA[if age >= 13:]]></string>
+    <string name="if_statements_making_choices">If Statements: Making Choices</string>
+    <string name="drop_condition_here_to_open_the_gate">Drop condition here to open the gate</string>
+    <string name="nothing">Nothing</string>
+    <string name="big">Big</string>
+    <string name="error">Error</string>
+    <string name="check_answer">Check Answer</string>
 </resources>

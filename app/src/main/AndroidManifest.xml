@@ -13,12 +13,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GameCoded">
+
         <activity
-            android:name=".html_lesson1"
-            android:exported="false" />
+            android:name=".HtmlLesson3"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.DynamicColors.Dark.NoActionBar" />
+        <activity
+            android:name=".HtmlLesson2"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.DynamicColors.Dark.NoActionBar" />
+        <activity
+            android:name=".HtmlLesson1"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.DynamicColors.Dark.NoActionBar" />
         <activity
             android:name=".ChatBot"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Material3.DynamicColors.Dark.NoActionBar" />
         <activity
             android:name=".CssLessons"
             android:exported="false"

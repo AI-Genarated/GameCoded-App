@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_html_lesson2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="16dp"
+    android:background="@drawable/gradient_background_explore"
+    tools:context=".HtmlLesson2">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/heading"
+                android:text="@string/lesson_2_html_headings"
+                android:textSize="24sp"
+                android:padding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/lesson_text"
+                android:text="@string/headings_in_html_are_written_with_h1_to_h6_h1_is_the_largest_and_h6_is_the_smallest"
+                android:padding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <!-- Mini Game -->
+            <TextView
+                android:text="@string/drag_the_heading_tags_to_the_correct_boxes"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:padding="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/drag_h1"
+                    android:text="@string/h1"
+                    android:padding="10dp"
+                    android:background="@android:color/holo_blue_light"
+                    android:layout_margin="8dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/drag_h3"
+                    android:text="@string/h3"
+                    android:padding="10dp"
+                    android:background="@android:color/holo_green_light"
+                    android:layout_margin="8dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/drag_h6"
+                    android:text="@string/h6"
+                    android:padding="10dp"
+                    android:background="@android:color/holo_purple"
+                    android:layout_margin="8dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/drop_largest"
+                    android:background="#DDFFDD"
+                    android:padding="16dp"
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView android:text="@string/largest_heading"  android:layout_height="wrap_content" android:layout_width="wrap_content" android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/drop_medium"
+                    android:background="#DDFFDD"
+                    android:padding="16dp"
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView android:text="@string/medium_heading" android:layout_height="wrap_content" android:layout_width="wrap_content" android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/drop_smallest"
+                    android:background="#DDFFDD"
+                    android:padding="16dp"
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView android:text="@string/smallest_heading" android:layout_height="wrap_content" android:layout_width="wrap_content" android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Quiz -->
+            <TextView
+                android:text="@string/quiz_which_tag_makes_the_biggest_heading"
+                android:padding="8dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"/>
+
+            <RadioGroup
+                android:id="@+id/quiz_group"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RadioButton android:text="@string/h1" android:id="@+id/opt_h1" android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"/>
+                <RadioButton android:text="@string/h3" android:id="@+id/opt_h3" android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"/>
+                <RadioButton android:text="@string/h6" android:id="@+id/opt_h6" android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"/>
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/quiz_submit"
+                android:text="@string/submit"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/quiz_result"
+                android:text=""
+                android:padding="8dp"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </ScrollView>
