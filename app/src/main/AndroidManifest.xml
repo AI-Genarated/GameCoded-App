@@ -14,9 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GameCoded" >
 
-        <activity
-            android:name=".css_lesson1"
-            android:exported="false" />
+
         <activity
             android:name=".HtmlLesson5"
             android:exported="false" />
