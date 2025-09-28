@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_html_lesson4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="16dp"
+    android:background="@drawable/gradient_background_explore"
+    tools:context=".HtmlLesson4">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Lesson 4: HTML Links"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:padding="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="Links in HTML are created with the <a> tag."
+            android:padding="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <!-- Mini Game -->
+        <TextView
+            android:text="Drag the correct tag to the link box:"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/drag_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@android:color/holo_orange_light"
+                android:padding="10dp"
+                android:text="@string/a"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/drag_img"
+                android:text="@string/img"
+                android:padding="10dp"
+                android:background="@android:color/holo_green_light"
+                android:layout_margin="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/drop_link"
+            android:background="#DDFFDD"
+            android:padding="16dp"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView android:text="Drop the link tag here" android:textStyle="bold"
+                android:textColor="@color/black" android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/drop_image"
+            android:background="#FFDDDD"
+            android:padding="16dp"
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView android:text="Drop the image tag here" android:textStyle="bold"
+                android:textColor="@color/black" android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <!-- Quiz -->
+        <TextView
+            android:text="Quiz: Which tag is used for links?"
+            android:padding="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <RadioGroup
+            android:id="@+id/quiz_group"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton android:text="@string/a" android:id="@+id/opt_a" android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_width="200dp"
+                android:layout_height="48dp"/>
+            <RadioButton android:text="@string/p" android:id="@+id/opt_p" android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_width="200dp"
+                android:layout_height="48dp"/>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/quiz_submit"
+            android:text="Submit"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/quiz_result"
+            android:text=""
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</ScrollView>

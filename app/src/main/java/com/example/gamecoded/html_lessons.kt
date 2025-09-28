@@ -34,11 +34,11 @@ class HtmlLessons : AppCompatActivity() {
         html_Lesson3.setOnClickListener {
             startActivity(Intent(this, HtmlLesson3::class.java))
         }
-//        html_Lesson4.setOnClickListener {
-//            startActivity(Intent(this, html_lesson4::class.java))
-//        }
-//        html_Lesson5.setOnClickListener {
-//            startActivity(Intent(this, html_lesson5::class.java))
-//        }
+        html_Lesson4.setOnClickListener {
+            startActivity(Intent(this, HtmlLesson4::class.java))
+        }
+        html_Lesson5.setOnClickListener {
+            startActivity(Intent(this, HtmlLesson5::class.java))
+        }
     }
 }
