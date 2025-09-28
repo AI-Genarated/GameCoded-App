@@ -1,4 +1,6 @@
-[PAD]
+[CLS]
+[SEP]
+<unk>
 [unused0]
 [unused1]
 [unused2]

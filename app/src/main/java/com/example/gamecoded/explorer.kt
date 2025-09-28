@@ -29,7 +29,9 @@ class Explorer : AppCompatActivity() {
         val ai = findViewById<ImageButton>(R.id.ai_button)
         val profile = findViewById<ImageButton>(R.id.profile_button)
 
-
+        ai.setOnClickListener {
+            startActivity(Intent(this, ChatBot::class.java))
+        }
         pythonLesson.setOnClickListener {
             startActivity(Intent(this, PythonLessons::class.java))
         }

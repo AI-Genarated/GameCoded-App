@@ -1,322 +1,228 @@
 package com.example.gamecoded
 
-import ai.onnxruntime.OrtEnvironment
-import ai.onnxruntime.OrtSession
-import ai.onnxruntime.OnnxTensor
 import android.content.Context
-import android.util.Log
-import java.io.IOException
-import java.nio.FloatBuffer
+import ai.onnxruntime.OnnxTensor
+import ai.onnxruntime.OrtEnvironment
+import ai.onnxruntime.OrtException
+import ai.onnxruntime.OrtSession
+import ai.onnxruntime.OrtSession.Result
 import java.nio.LongBuffer
-import java.util.Collections
 
 class ChatbotHelper(private val context: Context) {
-    private var env: OrtEnvironment? = null
-    private var session: OrtSession? = null
+
+    companion object {
+        private const val MODEL_PATH = "mobile_models/model.onnx"
+        private const val VOCAB_PATH = "mobile_models/vocab.txt"
+        private const val MAX_RESPONSE_LENGTH = 50
+        private const val TAG = "ChatbotHelper"
+    }
+
+    private var ortEnvironment: OrtEnvironment? = null
+    private var ortSession: OrtSession? = null
+    private lateinit var tokenizer: Tokenizer
     private var isInitialized = false
-    
-    // Simple vocabulary for demonstration - replace with your model's vocab
-    private val vocabulary = mapOf(
-        "<pad>" to 0L, "<unk>" to 1L, "[CLS]" to 101L, "[SEP]" to 102L,
-        "hello" to 7592L, "hi" to 7593L, "how" to 2129L, "are" to 2024L,
-        "you" to 2017L, "what" to 2054L, "is" to 2003L, "your" to 2115L,
-        "name" to 2171L, "?" to 1029L, "good" to 2204L, "fine" to 2486L,
-        "thanks" to 4283L, "bye" to 11036L, "help" to 2393L
-    )
+
+    private lateinit var inputName: String
+    private lateinit var outputName: String
 
     init {
-        initializeModel()
+        initialize()
     }
 
-    private fun initializeModel() {
-        val modelPath = "mobile_models/model.onnx"
+    private fun initialize() {
+        println("$TAG: === Chatbot Initialization Started ===")
         try {
-            // Check if model file exists
-            val inputStream = context.assets.open(modelPath)
-            val modelBytes = inputStream.readBytes()
-            inputStream.close()
-            
-            env = OrtEnvironment.getEnvironment()
-            session = env?.createSession(modelBytes)
-            
-            session?.let { sess ->
-                Log.d("ChatbotHelper", "ONNX model loaded successfully")
-                Log.d("ChatbotHelper", "Input names: ${sess.inputNames}")
-                Log.d("ChatbotHelper", "Output names: ${sess.outputNames}")
-                
-                // Print input info for debugging (safer approach)
-                logModelInputInfo(sess)
-                
-                isInitialized = true
-            }
-        } catch (e: IOException) {
-            Log.e("ChatbotHelper", "Model file not found: $modelPath", e)
-            isInitialized = false
+            println("$TAG: Initializing tokenizer from assets: $VOCAB_PATH")
+            tokenizer = Tokenizer(context, VOCAB_PATH)
+            println("$TAG: ✓ Tokenizer initialized successfully. Vocab size: ${tokenizer.getVocabSize()}")
+
+            println("$TAG: Creating ORT Environment...")
+            ortEnvironment = OrtEnvironment.getEnvironment()
+            println("$TAG: ✓ ORT Environment created.")
+
+            println("$TAG: Loading model from assets: $MODEL_PATH")
+            val modelBytes = context.assets.open(MODEL_PATH).readBytes()
+            println("$TAG: ✓ Model loaded into memory (${modelBytes.size} bytes).")
+
+            ortSession = ortEnvironment!!.createSession(modelBytes)
+            println("$TAG: ✓ ORT Session created.")
+
+            inputName = ortSession!!.inputNames.first()
+            outputName = ortSession!!.outputNames.first()
+            println("$TAG: ✓ Model introspection complete:")
+            println("$TAG:   - Input Name: '$inputName'")
+            println("$TAG:   - Output Name: '$outputName'")
+
+            isInitialized = true
+            println("$TAG: === Initialization Complete - SUCCESS ===")
+
         } catch (e: Exception) {
-            Log.e("ChatbotHelper", "Failed to load ONNX model: $modelPath", e)
             isInitialized = false
+            println("$TAG: ❌ ERROR: Initialization failed: ${e.message}")
+            e.printStackTrace()
+            println("$TAG: === Initialization Complete - FAILED ===")
         }
     }
 
-    private fun logModelInputInfo(session: OrtSession) {
+    private fun runInference(inputIdsData: LongArray): Result? {
+
+        val ortEnv = ortEnvironment ?: return null
+        val session = ortSession ?: return null
+
+        val tensorsToClose = mutableListOf<OnnxTensor>()
+
         try {
-            // Log input names (this always works)
-            Log.d("ChatbotHelper", "Input names: ${session.inputNames.joinToString(", ")}")
-            Log.d("ChatbotHelper", "Output names: ${session.outputNames.joinToString(", ")}")
-            
-            // Try to get input info using the correct method signature
-            try {
-                val inputInfoMap = session.getInputInfo()
-                for ((name, nodeInfo) in inputInfoMap) {
-                    Log.d("ChatbotHelper", "Input '$name': $nodeInfo")
-                }
-            } catch (e: Exception) {
-                Log.d("ChatbotHelper", "Could not get input info map: ${e.message}")
-            }
-            
-            // Try to get output info using the correct method signature
-            try {
-                val outputInfoMap = session.getOutputInfo()
-                for ((name, nodeInfo) in outputInfoMap) {
-                    Log.d("ChatbotHelper", "Output '$name': $nodeInfo")
-                }
-            } catch (e: Exception) {
-                Log.d("ChatbotHelper", "Could not get output info map: ${e.message}")
-            }
-            
-        } catch (e: Exception) {
-            Log.w("ChatbotHelper", "Could not retrieve model metadata: ${e.message}")
+            val sequenceLength = inputIdsData.size.toLong()
+            val shape = longArrayOf(1, sequenceLength)
+
+            // FIX: Use LongBuffer.wrap() for input_ids
+            val inputIdsTensor = OnnxTensor.createTensor(
+                ortEnv,
+                LongBuffer.wrap(inputIdsData),
+                shape
+            )
+            tensorsToClose.add(inputIdsTensor)
+
+            // FIX: Use LongBuffer.wrap() for token_type_ids
+            val tokenTypeIdsData = LongArray(inputIdsData.size) { 0L }
+            val tokenTypeIdsTensor = OnnxTensor.createTensor(
+                ortEnv,
+                LongBuffer.wrap(tokenTypeIdsData),
+                shape
+            )
+            tensorsToClose.add(tokenTypeIdsTensor)
+
+            // FIX: Use LongBuffer.wrap() for attention_mask
+            val attentionMaskData = LongArray(inputIdsData.size) { 1L }
+            val attentionMaskTensor = OnnxTensor.createTensor(
+                ortEnv,
+                LongBuffer.wrap(attentionMaskData),
+                shape
+            )
+            tensorsToClose.add(attentionMaskTensor)
+
+            val inputs = mapOf(
+                "input_ids" to inputIdsTensor,
+                "token_type_ids" to tokenTypeIdsTensor,
+                "attention_mask" to attentionMaskTensor
+            )
+
+            return session.run(inputs, setOf(outputName))
+
+        } catch (e: OrtException) {
+            // FIX: Use getErrorCode()
+            println("$TAG: ❌ ERROR: Inference failed: Error code - ${e.code} - message: ${e.message}")
+            e.printStackTrace()
+            return null
+        } finally {
+            // FIX: Ensure all input tensors are closed
+            tensorsToClose.forEach { it.close() }
         }
     }
 
-    private fun isResultEmpty(results: OrtSession.Result): Boolean {
-        return try {
-            if (results.size() == 0) {
-                Log.d("ChatbotHelper", "Results container is empty")
-                true
-            } else {
-                var hasValidOutput = false
-                for ((name, ortValue) in results) {
-                    Log.d("ChatbotHelper", "Checking output '$name': ${ortValue?.javaClass?.simpleName}")
-                    
-                    val value = ortValue?.value
-                    when {
-                        value == null -> {
-                            Log.d("ChatbotHelper", "Output '$name' has null value")
-                        }
-                        value is Array<*> && value.isEmpty() -> {
-                            Log.d("ChatbotHelper", "Output '$name' is empty array")
-                        }
-                        value is FloatArray && value.isEmpty() -> {
-                            Log.d("ChatbotHelper", "Output '$name' is empty FloatArray")
-                        }
-                        value is LongArray && value.isEmpty() -> {
-                            Log.d("ChatbotHelper", "Output '$name' is empty LongArray")
-                        }
-                        else -> {
-                            Log.d("ChatbotHelper", "Output '$name' has valid data")
-                            hasValidOutput = true
-                        }
-                    }
-                }
-                !hasValidOutput
-            }
-        } catch (e: Exception) {
-            Log.e("ChatbotHelper", "Error checking if results are empty", e)
-            true // Assume empty on error
-        }
-    }
+    private fun generateResponse(userInput: String): String {
+        val tokens = tokenizer.encode(userInput)
+        val inputIdsData = tokens.toLongArray()
 
-    private fun tokenize(text: String): List<Long> {
-        val tokens = mutableListOf<Long>()
-        tokens.add(101L) // [CLS] token
-        
-        // Simple word-level tokenization
-        val words = text.lowercase().split(" ")
-        for (word in words) {
-            val cleanWord = word.replace(Regex("[^a-z?]"), "")
-            tokens.add(vocabulary[cleanWord] ?: 1L) // Use <unk> for unknown words
-        }
-        
-        tokens.add(102L) // [SEP] token
-        return tokens
-    }
+        val result: Result? = runInference(inputIdsData)
 
-    private fun processModelOutput(results: OrtSession.Result): String {
-        return try {
-            if (isResultEmpty(results)) {
-                return "AI: No valid output from model"
-            }
-
-            val firstOutput = results.first()
-            val outputValue = firstOutput?.value
-
-            Log.d("ChatbotHelper", "Processing output of type: ${outputValue?.javaClass?.simpleName}")
-
-            when (outputValue) {
-                is Array<*> -> {
-                    Log.d("ChatbotHelper", "Array output with ${outputValue.size} elements")
-                    if (outputValue.isNotEmpty()) {
-                        when (val firstElement = outputValue[0]) {
-                            is FloatArray -> {
-                                Log.d("ChatbotHelper", "FloatArray with ${firstElement.size} elements")
-                                if (firstElement.isNotEmpty()) {
-                                    val maxIndex = firstElement.indices.maxByOrNull { firstElement[it] } ?: 0
-                                    val confidence = firstElement[maxIndex]
-                                    generateResponseFromLogits(maxIndex, confidence)
-                                } else {
-                                    "AI: Empty probability array"
-                                }
-                            }
-                            is Array<*> -> {
-                                Log.d("ChatbotHelper", "Nested array with ${firstElement.size} elements")
-                                "AI: Received nested array output - processing not implemented yet"
-                            }
-                            else -> {
-                                Log.d("ChatbotHelper", "Array element type: ${firstElement?.javaClass?.simpleName}")
-                                "AI: Output format: ${firstElement?.javaClass?.simpleName}"
-                            }
-                        }
-                    } else {
-                        "AI: Empty array output"
-                    }
-                }
-                is FloatArray -> {
-                    Log.d("ChatbotHelper", "Direct FloatArray with ${outputValue.size} elements")
-                    if (outputValue.isNotEmpty()) {
-                        val maxIndex = outputValue.indices.maxByOrNull { outputValue[it] } ?: 0
-                        val confidence = outputValue[maxIndex]
-                        generateResponseFromLogits(maxIndex, confidence)
-                    } else {
-                        "AI: Empty float array"
-                    }
-                }
-                is LongArray -> {
-                    Log.d("ChatbotHelper", "LongArray with ${outputValue.size} elements")
-                    if (outputValue.isNotEmpty()) {
-                        val tokens = outputValue.toList()
-                        decodeTokens(tokens)
-                    } else {
-                        "AI: Empty token array"
-                    }
-                }
-                is IntArray -> {
-                    Log.d("ChatbotHelper", "IntArray with ${outputValue.size} elements")
-                    if (outputValue.isNotEmpty()) {
-                        val tokens = outputValue.map { it.toLong() }
-                        decodeTokens(tokens)
-                    } else {
-                        "AI: Empty int array"
-                    }
-                }
-                else -> {
-                    Log.w("ChatbotHelper", "Unhandled output type: ${outputValue?.javaClass}")
-                    "AI: Output type ${outputValue?.javaClass?.simpleName} - decoder needed"
-                }
-            }
-        } catch (e: Exception) {
-            Log.e("ChatbotHelper", "Error processing model output", e)
-            "AI: Error processing response: ${e.message}"
-        }
-    }
-
-    private fun generateResponseFromLogits(maxIndex: Int, confidence: Float): String {
-        // Simple response generation based on output class
-        val responses = arrayOf(
-            "Hello! How can I help you today?",
-            "Hi there! Nice to meet you!",
-            "I'm doing well, thank you for asking!",
-            "That's interesting! Tell me more.",
-            "I'm here to help with your questions.",
-            "Thanks for chatting with me!"
-        )
-        
-        val responseIndex = maxIndex % responses.size
-        return "AI: ${responses[responseIndex]} (confidence: ${String.format("%.2f", confidence)})"
-    }
-
-    private fun decodeTokens(tokens: List<Long>): String {
-        val reverseVocab = vocabulary.entries.associate { it.value to it.key }
-        val words = mutableListOf<String>()
-        
-        for (token in tokens) {
-            if (token == 101L || token == 102L) continue // Skip special tokens
-            val word = reverseVocab[token] ?: "<unk>"
-            if (word != "<pad>" && word != "<unk>") {
-                words.add(word)
-            }
-        }
-        
-        return if (words.isNotEmpty()) {
-            "AI: ${words.joinToString(" ").replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }}"
-        } else {
-            "AI: I understand, but I'm still learning how to respond!"
-        }
+        // The model ran successfully but needs a generation loop.
+        return result?.use {
+            "SUCCESS: Model inference complete. The result is an embedding. Waiting for implementation of the text generation loop."
+        } ?: "ERROR: Model inference failed. See logs for OrtException details."
     }
 
     fun getReply(userInput: String): String {
+        println("$TAG: Processing user input: '$userInput'")
         if (!isInitialized) {
-            return "AI: Sorry, the model isn't loaded. Please check if the model file exists in assets/mobile_models/model.onnx"
+            println("$TAG: Model not initialized. Using fallback response.")
+            return getFallbackResponse(userInput)
         }
 
-        if (userInput.trim().isEmpty()) {
-            return "AI: Please enter a message!"
+        if (userInput.isBlank()) {
+            return "AI: Please say something!"
         }
 
-        val session = this.session ?: return "AI: Session not available"
-        
-        // Fallback responses for common inputs (while model is being debugged)
-        val fallbackResponses = mapOf(
-            "hello" to "AI: Hello! How are you doing today?",
-            "hi" to "AI: Hi there! What's on your mind?",
-            "how are you" to "AI: I'm doing great! Thanks for asking. How about you?",
-            "what is your name" to "AI: I'm your friendly AI assistant! What's your name?",
-            "help" to "AI: I'm here to help! What do you need assistance with?",
-            "bye" to "AI: Goodbye! Have a wonderful day!"
-        )
-        
-        val lowerInput = userInput.lowercase().trim()
-        fallbackResponses[lowerInput]?.let { return it }
-
-        // Try ONNX model inference
         return try {
-            val tokenizedInput = tokenize(userInput)
-            Log.d("ChatbotHelper", "Tokenized input: $tokenizedInput")
-            
-            val inputShape = longArrayOf(1, tokenizedInput.size.toLong())
-            val inputBuffer = LongBuffer.wrap(tokenizedInput.toLongArray())
-            
-            val firstInputName = session.inputNames.first()
-            
-            OnnxTensor.createTensor(env, inputBuffer, inputShape).use { inputTensor ->
-                val inputs = Collections.singletonMap(firstInputName, inputTensor)
-                
-                session.run(inputs).use { results ->
-                    Log.d("ChatbotHelper", "Model inference completed successfully")
-                    if (isResultEmpty(results)) {
-                        Log.w("ChatbotHelper", "Model returned empty results")
-                        return "AI: The model didn't return any meaningful output. This might be a model configuration issue."
-                    }
-                    processModelOutput(results)
-                }
+            val statusMessage = generateResponse(userInput)
+
+            // If the model ran successfully, return the instructional message for the user.
+            if (statusMessage.startsWith("SUCCESS:")) {
+                // The main activity handles the "Thinking..." text, so we return a friendly reply here.
+                return "AI: I ran the model successfully! However, the code is currently returning a status message instead of a real reply because the **text generation/decoding logic** is not yet implemented. Please check back later for a full chat update! $statusMessage"
             }
+
+            // Return a general error message if inference failed
+            "AI: Inference Error: Could not get a reply. Please check the system logs. ${statusMessage.replace("ERROR:", "")}"
+
         } catch (e: Exception) {
-            Log.e("ChatbotHelper", "Error during ONNX inference", e)
-            // Provide a helpful fallback
-            "AI: I'm having trouble processing that right now, but I'm here to chat! Try asking me something simple like 'hello' or 'how are you'."
+            println("$TAG: ❌ ERROR: Inference failed: ${e.message}")
+            e.printStackTrace()
+            getFallbackResponse(userInput)
         }
+    }
+
+    private fun getFallbackResponse(input: String): String {
+        val lowerInput = input.lowercase().trim()
+        val responses = mapOf(
+            "hello" to "Hello! How can I help you with coding today?",
+            "hi" to "Hi there! Ready to learn some code?",
+            "help" to "Of course! What programming concept are you curious about?",
+            "bye" to "Goodbye! Happy coding!"
+        )
+
+        return responses.entries.find { lowerInput.contains(it.key) }?.value
+            ?: "AI: I'm not sure how to answer that. Try asking me about coding! (Fallback mode is active.)"
     }
 
     fun cleanup() {
         try {
-            session?.close()
-            env?.close()
-            session = null
-            env = null
+            println("$TAG: Cleaning up resources.")
+            ortSession?.close()
+            ortEnvironment?.close()
             isInitialized = false
-            Log.d("ChatbotHelper", "ChatbotHelper cleaned up successfully")
         } catch (e: Exception) {
-            Log.e("ChatbotHelper", "Error during cleanup", e)
+            println("$TAG: ❌ ERROR during cleanup: ${e.message}")
         }
+    }
+}
+
+class Tokenizer(context: Context, vocabPath: String) {
+    private val vocabulary: Map<String, Int>
+    private val reverseVocabulary: Map<Int, String>
+
+    val eosTokenId: Int
+    private val unkTokenId: Int
+
+    init {
+        val vocabList = context.assets.open(vocabPath).bufferedReader().readLines()
+        vocabulary = vocabList.mapIndexed { index, token -> token to index }.toMap()
+        reverseVocabulary = vocabulary.entries.associate { (k, v) -> v to k }
+
+        eosTokenId = vocabulary["[SEP]"] ?: throw IllegalArgumentException("Vocabulary must contain an end-of-sequence token like '[SEP]'")
+        unkTokenId = vocabulary["<unk>"] ?: throw IllegalArgumentException("Vocabulary must contain an unknown token like '<unk>'")
+    }
+
+    fun getVocabSize(): Int = vocabulary.size
+
+    fun encode(text: String): List<Long> {
+        val tokens = mutableListOf<Long>()
+        tokens.add(vocabulary["[CLS]"]!!.toLong())
+
+        val words = text.lowercase().trim().split(Regex("\\s+"))
+        for (word in words) {
+            val tokenId = vocabulary[word] ?: unkTokenId
+            tokens.add(tokenId.toLong())
+        }
+        tokens.add(eosTokenId.toLong())
+        return tokens
+    }
+
+    fun decode(tokens: List<Long>): String {
+        val startIndex = tokens.indexOf(vocabulary["[CLS]"]!!.toLong()) + 1
+        return tokens.subList(startIndex, tokens.size)
+            .mapNotNull { reverseVocabulary[it.toInt()] }
+            .joinToString(" ")
+            .replace(" ##", "")
     }
 }

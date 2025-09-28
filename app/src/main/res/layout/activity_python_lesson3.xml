@@ -25,7 +25,6 @@
             android:gravity="center"
             android:paddingBottom="12dp" />
 
-
         <TextView
             android:id="@+id/tvLessonIf"
             android:layout_width="match_parent"

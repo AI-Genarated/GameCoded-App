@@ -7,7 +7,6 @@ import com.google.gson.reflect.TypeToken
 import ai.onnxruntime.OnnxTensor
 import ai.onnxruntime.OrtEnvironment
 import ai.onnxruntime.OrtSession
-import java.io.InputStreamReader
 import kotlin.math.sqrt
 
 data class StoreFile(val texts: List<String>, val vectors: List<List<Double>>, val metadata: List<Map<String,Any>>)
@@ -29,7 +28,7 @@ class Retriever(private val context: Context) {
         val modelBytes = context.assets.open("model.onnx").readBytes()
         session = env.createSession(modelBytes)
         // load tokenizer vocab
-        tokenizer = WordPieceTokenizer.fromAssets(context, "tokenizer/vocab.txt")
+        tokenizer = WordPieceTokenizer.fromAssets(context, "mobile_models/vocab.txt")
     }
 
     private fun toFloatArray(doubles: List<Double>): FloatArray {

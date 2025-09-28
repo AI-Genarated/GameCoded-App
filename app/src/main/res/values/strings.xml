@@ -73,4 +73,5 @@
     <string name="big">Big</string>
     <string name="error">Error</string>
     <string name="check_answer">Check Answer</string>
+    <string name="paragraphs_in_html_are_written_with_p_p"><![CDATA[Paragraphs in HTML are written with <p> ... </p>.]]></string>
 </resources>

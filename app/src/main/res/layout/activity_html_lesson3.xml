@@ -24,7 +24,7 @@
             android:textColor="@color/black"/>
 
         <TextView
-            android:text="Paragraphs in HTML are written with <p> ... </p>."
+            android:text="@string/paragraphs_in_html_are_written_with_p_p"
             android:padding="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -52,13 +52,13 @@
                 android:layout_margin="8dp"
                 android:background="@android:color/holo_green_light"
                 android:padding="10dp"
-                android:text="<p>"
+                android:text="@string/p"
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/drag_h1_tag"
-                android:text="<h1>"
+                android:text="@string/h1"
                 android:padding="10dp"
                 android:background="@android:color/holo_orange_light"
                 android:layout_margin="8dp"
@@ -113,11 +113,11 @@
             android:textStyle="bold"
             android:textColor="@color/black">
 
-            <RadioButton android:text="<p>" android:id="@+id/opt_p" android:textStyle="bold"
+            <RadioButton android:text="@string/p" android:id="@+id/opt_p" android:textStyle="bold"
                 android:textColor="@color/black"
                 android:layout_width="200dp"
                 android:layout_height="48dp"/>
-            <RadioButton android:text="<h1>" android:id="@+id/opt_h1" android:textStyle="bold"
+            <RadioButton android:text="@string/h1" android:id="@+id/opt_h1" android:textStyle="bold"
                 android:textColor="@color/black"
                 android:layout_width="200dp"
                 android:layout_height="48dp"/>
