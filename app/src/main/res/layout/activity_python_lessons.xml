@@ -52,7 +52,7 @@
         android:shadowDx="10"
         android:shadowDy="1"
         android:shadowRadius="10"
-        android:text="Fundamentals"
+        android:text="Lesson 1"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         app:cornerRadius="15dp"
