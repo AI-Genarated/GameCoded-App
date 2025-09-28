@@ -9,6 +9,13 @@ android {
     namespace = "com.example.gamecoded"
     compileSdk = 36
 
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.3" // Example version, replace with the correct one
+    }
+
     defaultConfig {
         applicationId = "com.example.gamecoded"
         minSdk = 26
@@ -48,10 +55,16 @@ dependencies {
     // Firebase BOM for version management
     implementation(platform(libs.firebase.bom))
 
+    // Remove this line from your module's build.gradle dependencies
+    // implementation("androidx.compose.material3:material3:1.4.0")
+
+    // Keep the BOM and the non-versioned material3 dependency
+    implementation(platform("androidx.compose:compose-bom:2025.09.01"))
+    implementation("androidx.compose.material3:material3")
+
     // Firebase dependencies using BOM
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
-
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

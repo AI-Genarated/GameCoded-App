@@ -2,11 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/python_lessons"
+    android:id="@+id/css_lessons"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background_explore"
-    tools:context=".PythonLessons">
+    tools:context=".CssLessons">
 
     <TextView
         android:id="@+id/text_on_image"
@@ -19,7 +19,7 @@
         android:shadowDx="10"
         android:shadowDy="1"
         android:shadowRadius="10"
-        android:text="Python"
+        android:text="@string/css"
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="50sp"
@@ -52,7 +52,7 @@
         android:shadowDx="10"
         android:shadowDy="1"
         android:shadowRadius="10"
-        android:text="Fundamentals"
+        android:text="@string/lesson_1"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         app:cornerRadius="15dp"
@@ -76,7 +76,7 @@
         android:shadowDx="10"
         android:shadowDy="1"
         android:shadowRadius="10"
-        android:text="lesson 2"
+        android:text="@string/lesson_2"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         app:cornerRadius="15dp"
@@ -100,7 +100,7 @@
         android:shadowDx="10"
         android:shadowDy="1"
         android:shadowRadius="10"
-        android:text="lesson 3"
+        android:text="@string/lesson_3"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         app:cornerRadius="15dp"
@@ -124,7 +124,7 @@
         android:shadowDx="10"
         android:shadowDy="1"
         android:shadowRadius="10"
-        android:text="lesson 4"
+        android:text="@string/lesson_4"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         app:cornerRadius="15dp"
@@ -148,7 +148,7 @@
         android:shadowDx="10"
         android:shadowDy="1"
         android:shadowRadius="10"
-        android:text="lesson 5"
+        android:text="@string/lesson_5"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         app:cornerRadius="15dp"
@@ -200,7 +200,7 @@
         android:layout_marginBottom="16dp"
 
         android:background="@android:color/transparent"
-        android:contentDescription="ai_button"
+        android:contentDescription="@string/ai_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ai_lessons" />
@@ -212,7 +212,7 @@
         android:layout_marginBottom="16dp"
 
         android:background="@android:color/transparent"
-        android:contentDescription="home_button"
+        android:contentDescription="@string/home_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.085"
@@ -226,7 +226,7 @@
         android:layout_marginBottom="16dp"
 
         android:background="@android:color/transparent"
-        android:contentDescription="lessons_button"
+        android:contentDescription="@string/lessons_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.35"
@@ -240,7 +240,7 @@
         android:layout_marginBottom="16dp"
 
         android:background="@android:color/transparent"
-        android:contentDescription="profile_button"
+        android:contentDescription="@string/profile_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.874"

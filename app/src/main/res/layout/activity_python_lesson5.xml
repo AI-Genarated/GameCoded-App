@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/python_lesson5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background_explore"
+    tools:context=".PythonLesson5">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvHeadingFunc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Functions: Reusable code"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:paddingBottom="12dp" />
+
+    <TextView
+        android:id="@+id/tvLessonFunc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text='A function is a named block of code you can use again and again. Use def to make one.\n\nExample:\ndef greet():\n    print(\"Hello\")\ngreet()\n\nBuild the function below and then call it!'
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:paddingBottom="16dp" />
+
+    <!-- Build a function -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:id="@+id/funcBlock1"
+            android:text="def say_hi():"
+            android:padding="12dp"
+            android:background="@android:color/holo_orange_light"
+            android:layout_margin="8dp"
+            android:layout_height="60dp"
+            android:layout_width="100dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/funcBlock2"
+            android:text='    print(\"Hi\")'
+            android:padding="12dp"
+            android:background="@android:color/holo_green_light"
+            android:layout_margin="8dp"
+            android:layout_height="60dp"
+            android:layout_width="100dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/funcBlock3"
+            android:text="say_hi()"
+            android:padding="12dp"
+            android:background="@android:color/holo_blue_light"
+            android:layout_margin="8dp"
+            android:layout_height="60dp"
+            android:layout_width="100dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/funcDrop"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="@android:color/darker_gray"
+        android:gravity="center"
+        android:text="Drop blocks here to run function"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Quiz -->
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Quiz: What keyword creates a function in Python?" android:textSize="18sp" android:paddingBottom="8dp" android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <RadioGroup android:id="@+id/rgFunc" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <RadioButton android:id="@+id/funcOpt1" android:text="def" android:layout_width="100dp" android:layout_height="48dp" android:textStyle="bold" android:textColor="@color/black"/>
+        <RadioButton android:id="@+id/funcOpt2" android:layout_width="100dp" android:layout_height="48dp" android:text="fun" android:textStyle="bold" android:textColor="@color/black"/>
+        <RadioButton android:id="@+id/funcOpt3" android:layout_width="100dp" android:layout_height="48dp" android:text="function" android:textStyle="bold" android:textColor="@color/black"/>
+    </RadioGroup>
+
+    <Button android:id="@+id/btnFuncSubmit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Check Answer" android:layout_marginTop="12dp" android:textStyle="bold"/>
+    <TextView android:id="@+id/tvFuncResult" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:textStyle="bold" android:paddingTop="8dp"/>
+</LinearLayout>
+</ScrollView>

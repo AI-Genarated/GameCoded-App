@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_html_lesson1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="16dp"
+    android:background="@drawable/gradient_background_explore"
+    tools:context=".HtmlLesson1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Heading -->
+            <TextView
+                android:id="@+id/tvHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lesson_1_introduction_to_html"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:paddingBottom="16dp"/>
+
+            <!-- Lesson Content -->
+            <TextView
+                android:id="@+id/tvLesson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/html_stands_for_hypertext_markup_language_it_is_the_standard_language_for_creating_web_pages_html_uses_tags_like_h1_p_and_a_to_structure_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:paddingBottom="24dp"/>
+
+            <!-- Drag and Drop Game Section -->
+            <TextView
+                android:id="@+id/tvGameHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mini_game_match_the_html_tag_with_its_meaning"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:paddingBottom="8dp"/>
+
+            <LinearLayout
+                android:id="@+id/dragContainer"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="24dp">
+
+                <!-- Draggable Tags -->
+                <TextView
+                    android:id="@+id/tagH1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="@android:color/holo_blue_light"
+                    android:text='@string/h1'
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tagP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:background="@android:color/holo_green_light"
+                    android:text="@string/p"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+            </LinearLayout>
+
+            <!-- Drop Targets -->
+            <LinearLayout
+                android:id="@+id/dropContainer"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="24dp">
+
+                <TextView
+                    android:id="@+id/dropHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="@android:color/darker_gray"
+                    android:text="@string/heading_tag"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/dropParagraph"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="@android:color/darker_gray"
+                    android:text="@string/paragraph_tag"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+            <!-- Assessment -->
+            <TextView
+                android:id="@+id/tvAssessmentHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quick_quiz"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:paddingBottom="8dp"/>
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/option1"
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"
+                    android:text="@string/html_is_a_programming_language"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+
+                <RadioButton
+                    android:id="@+id/option2"
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"
+                    android:text="@string/html_is_a_markup_language"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+
+                <RadioButton
+                    android:id="@+id/option3"
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"
+                    android:text="@string/html_is_a_database_language"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/submit_answer"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+    </ScrollView>

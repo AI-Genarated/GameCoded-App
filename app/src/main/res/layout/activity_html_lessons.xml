@@ -2,11 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/python_lessons"
+    android:id="@+id/html_lessons"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background_explore"
-    tools:context=".PythonLessons">
+    tools:context=".HtmlLessons">
 
     <TextView
         android:id="@+id/text_on_image"
@@ -19,7 +19,7 @@
         android:shadowDx="10"
         android:shadowDy="1"
         android:shadowRadius="10"
-        android:text="Python"
+        android:text="HTML"
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="50sp"
@@ -52,7 +52,7 @@
         android:shadowDx="10"
         android:shadowDy="1"
         android:shadowRadius="10"
-        android:text="Fundamentals"
+        android:text="lesson 1"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         app:cornerRadius="15dp"

@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class signup : AppCompatActivity() {
+class SignUp : AppCompatActivity() {
 
     private lateinit var userName: EditText
     private lateinit var email: EditText
@@ -96,7 +96,7 @@ class signup : AppCompatActivity() {
                 if (task.isSuccessful) {
                     saveUserInfoToFirestore(name, email)
                     showToast("Registration successful")
-                    startActivity(Intent(this, explorer::class.java))
+                    startActivity(Intent(this, Explorer::class.java))
                 } else {
                     showToast("Registration failed: ${task.exception?.message}")
                 }
@@ -116,7 +116,7 @@ class signup : AppCompatActivity() {
                 .set(user)
                 .addOnSuccessListener {
                     showToast("Registration successful")
-                    startActivity(Intent(this, explorer::class.java))
+                    startActivity(Intent(this, Explorer::class.java))
                     finish()
                 }
                 .addOnFailureListener { e ->

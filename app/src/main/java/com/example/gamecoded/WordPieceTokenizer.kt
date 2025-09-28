@@ -87,7 +87,7 @@ class WordPieceTokenizer(private val vocab: Map<String, Int>, private val unkTok
     }
 
     companion object {
-        fun fromAssets(context: Context, vocabAssetPath: String = "tokenizer/vocab.txt"): WordPieceTokenizer {
+        fun fromAssets(context: Context, vocabAssetPath: String = "mobile_models/vocab.txt"): WordPieceTokenizer {
             val map = mutableMapOf<String, Int>()
             val stream = context.assets.open(vocabAssetPath)
             BufferedReader(InputStreamReader(stream)).use { br ->
