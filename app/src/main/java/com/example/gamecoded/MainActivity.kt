@@ -22,14 +22,21 @@ import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
-    private lateinit var modelRunner: OnxxModelRunner
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        modelRunner = OnxxModelRunner(assets)
-        setContent {
-            Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                ChatScreen(modelRunner)
+        try {
+            // Pass the application context to the model runner
+            val modelRunner = OnxxModelRunner(applicationContext)
+            setContent {
+                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                    ChatScreen(modelRunner)
+                }
+            }
+        } catch (t: Throwable) {
+            setContent {
+                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                    Text("Fatal Error: ${t.message}\n${t.stackTraceToString()}")
+                }
             }
         }
     }
