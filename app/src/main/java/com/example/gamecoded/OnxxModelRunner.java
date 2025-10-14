@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 public class OnxxModelRunner {
     private final OrtEnvironment env = OrtEnvironment.getEnvironment();
     private final OrtSession session;
-    private final Map<String, Integer> vocab;
+    private final Map<String, Integer> vocab;//c
 
     public OnxxModelRunner(AssetManager assetManager) {
         try {
