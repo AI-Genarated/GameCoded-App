@@ -76,4 +76,14 @@
     <string name="paragraphs_in_html_are_written_with_p_p"><![CDATA[Paragraphs in HTML are written with <p> ... </p>.]]></string>
     <string name="a"><![CDATA[<a>]]></string>
     <string name="img"><![CDATA[<img>]]></string>
+    <string name="quiz_which_tag_is_used_for_links">Quiz: Which tag is used for links?</string>
+    <string name="drop_the_image_tag_here">Drop the image tag here</string>
+    <string name="drop_the_link_tag_here">Drop the link tag here</string>
+    <string name="drag_the_correct_tag_to_the_link_box">Drag the correct tag to the link box:</string>
+    <string name="links_in_html_are_created_with_the_a_tag"><![CDATA[Links in HTML are created with the <a> tag.]]></string>
+    <string name="images_in_html_are_displayed_with_the_img_tag"><![CDATA[Images in HTML are displayed with the <img> tag.]]></string>
+    <string name="img1"><![CDATA[<img>]]></string>
+    <string name="p1"><![CDATA[<p>]]></string>
+    <string name="img3"><![CDATA[<img>]]></string>
+    <string name="h11"><![CDATA[<h1>]]></string>
 </resources>
